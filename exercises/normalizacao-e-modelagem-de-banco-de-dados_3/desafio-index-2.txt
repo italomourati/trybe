@@ -1,0 +1,16 @@
+USE sakila;
+ALTER TABLE address ADD INDEX(postal_code); 
+SELECT *
+FROM sakila.address
+WHERE postal_code = '36693';
+
+Tempo de execução: 0.35
+
+
+USE sakila;
+ALTER TABLE address DROP INDEX postal_code; 
+SELECT *
+FROM sakila.address
+WHERE postal_code = '36693';
+
+Tempo de execução: 61.80
