@@ -1,0 +1,4 @@
+importando o banco books.json: mongoimport --db class books.json
+
+db.books.count()
+
