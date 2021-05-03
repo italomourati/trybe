@@ -1,0 +1,5 @@
+importando o banco books.json: 
+mongoimport -d <nomedatabase> -c <nomedacolletions> books.json
+
+db.books.count()
+
