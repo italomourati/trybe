@@ -1,0 +1,18 @@
+USE sakila;
+ALTER TABLE category ADD FULLTEXT(name);
+-- Após ter criado o índice, mensure o custo com a seguinte query:
+SELECT *
+FROM sakila.category
+WHERE MATCH(name) AGAINST('action');
+
+Tempo de execução: 0.35
+
+
+USE sakila;
+ALTER TABLE category DROP INDEX name;
+-- Após ter excluído o índice, mensure o custo com a seguinte query:
+SELECT *
+FROM sakila.category
+WHERE name LIKE '%action%';
+
+Tempo de execução: 1.85

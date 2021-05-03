@@ -1,0 +1,5 @@
+USE sakila;
+CREATE VIEW movies_languages AS
+SELECT film.title, language.language_id, language.name
+FROM film
+INNER JOIN language ON language.language_id = film.language_id

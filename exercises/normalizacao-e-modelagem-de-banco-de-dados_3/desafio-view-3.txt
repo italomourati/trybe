@@ -1,0 +1,6 @@
+USE sakila;
+CREATE VIEW address_info AS
+SELECT address.address_id, address.address, address.district, city.city_id, city.city
+FROM address
+INNER JOIN city ON city.city_id = address.city_id
+ORDER BY city.city

@@ -1,0 +1,7 @@
+USE sakila;
+CREATE VIEW film_info AS
+SELECT actor.actor_id, CONCAT(actor.first_name,' ',actor.last_name) AS actor, film.title
+FROM film 
+INNER JOIN film_actor ON film.film_id = film_actor.film_id
+INNER JOIN actor ON actor.actor_id = film_actor.actor_id
+ORDER BY actor.first_name, actor.last_name;
