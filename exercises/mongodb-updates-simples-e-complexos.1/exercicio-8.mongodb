@@ -1,0 +1,5 @@
+use('class');
+db.moies.updateOne(
+  { "title": "Home Alone" },
+  { %min: { "budget": 5 } }
+);
