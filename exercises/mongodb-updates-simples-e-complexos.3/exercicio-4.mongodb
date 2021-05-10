@@ -1,0 +1,12 @@
+use('class');
+db.movies.updateOne(
+    { title: "Godzilla" },
+    {
+        $addToSet: {
+            ratings: {
+                $each: [78, 52, 95, 102]
+            }
+        }
+    }
+);
+db.movies.findOne({title: "Godzilla"});

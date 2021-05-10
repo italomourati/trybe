@@ -1,0 +1,12 @@
+use('class');
+db.movies.updateOne(
+    { title: "Home Alone" },
+    {
+        $addToSet: {
+            ratings: {
+                $each: [20, 99, 65]
+            }
+        }
+    }
+);
+db.movies.findOne({title: "Home Alone"});
